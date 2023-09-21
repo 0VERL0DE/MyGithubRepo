@@ -44,21 +44,19 @@ jobs:
          # ignore historical actions, only use present status
          fetch-depth: 0
          
-#      - name: Initiate repo in Workspace
-#        run: git init
+      - name: Initiate repo in Workspace
+        run: git init
         
-      - name: Specify credentials for write access to BitBucket
-        run: |
-           git config --global user.email "lode.rosseels@hotmail.com"
-           git config --global user.name "YEU"
+#      - name: Specify credentials for write access to BitBucket
+#        run: |
+#           git config --global user.email "lode.rosseels@hotmail.com"
+#           git config --global user.name "YEU"
     
            
       # Setup origin - no auth needed
       - name: Setup ORIGIN, without auth token
 #        run: git remote set-url origin --add https://bitbucket.org/0verl0de/BitBucketRepo.git
         run: git remote set-url origin --add https://bitbucket.org/0verl0de/MyBitBucketRepo.git
-
-
 
       - name: Debug print repo connections
         run: git remote -v
@@ -71,10 +69,11 @@ jobs:
 
       - name: Pull branch to repo, use BitBucket token
 #        run: git pull https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git pull https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/0verl0de/MyBitBucketRepo.git
+        run: git pull https://x-token-auth:ATCTT3xFfGN0hAMxaEbeGvzP14t5S5BBN3yYp7TW4t5X1Lx7F2K47CGaVNFj5A1v5lBh12DEk4BTmgpbqM4ABJbtSqlWm8mLs8AuHkU-yrozc1-jnEAuAAXq0AMj4EiZjhAMLTMvCmrTS4lAYKMCZvsk5Ept9f3NfLKELVy5OcOWW6UpCvig-JQ=3BF19963@bitbucket.org/0verl0de/MyBitBucketRepo.git
+
       - name: get conflicts and merge
-        run: git reset --hard main/origin
+        run: git reset --hard origin/main
         
       - name: git push
 #        run: git push -f https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git push -f https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/0verl0de/MyBitBucketRepo.git
+        run: git push -f https://x-token-auth:ATCTT3xFfGN0hAMxaEbeGvzP14t5S5BBN3yYp7TW4t5X1Lx7F2K47CGaVNFj5A1v5lBh12DEk4BTmgpbqM4ABJbtSqlWm8mLs8AuHkU-yrozc1-jnEAuAAXq0AMj4EiZjhAMLTMvCmrTS4lAYKMCZvsk5Ept9f3NfLKELVy5OcOWW6UpCvig-JQ=3BF19963@bitbucket.org/0verl0de/MyBitBucketRepo.git
