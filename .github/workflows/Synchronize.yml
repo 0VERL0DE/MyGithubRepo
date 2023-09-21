@@ -53,7 +53,7 @@ jobs:
 
       # Setup origin - no auth needed
       - name: Setup ORIGIN, without auth token
-        run: git remote set-url origin --add https://bitbucket.org/$REPO_NAME
+        run: git remote set-url origin --add https://bitbucket.org/0verl0de/mybitbucketrepo.git
                 
       - name: Debug print repo connections
         run: git remote -v
