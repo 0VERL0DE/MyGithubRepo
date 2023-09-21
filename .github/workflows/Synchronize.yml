@@ -1,4 +1,5 @@
 
+
 # sync token: ATCTT3xFfGN0WoiqCiSe8hC-kMLS5uOZIuGT3NdXgiGTmd2YO2jF7aitLzMFgKROKDq7D042X0FJcfQt3t8jei6FM9yzhh2kSC9WbuCVKZ9_pKY3pbn4xY-a1oy-5n9bBB0KsmXC9xxYGytwvN-gODw7unfNFBwFQ8xitwHUSkp68_sllx575p8=82102422
 # git config user.email 712020:06889ab2-c6f9-4f0a-9e48-d03819cf442f@bots.bitbucket.org
 
@@ -13,6 +14,8 @@ env:
   BITBUCKET_REPO : 0verl0de/mybitbucketrepo.git
   # Secure token
   BITBUCKET_TOKEN : ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58
+
+  
 
 # Sets permissions of the GITHUB_TOKEN
 permissions:
@@ -46,14 +49,14 @@ jobs:
 #      - name: Initiate repo in Workspace
 #        run: git init
         
-#      - name: Specify credentials for write access to BitBucket
-#        run: |
-#          git config --global user.email "lode.rosseels@hotmail.com"
-#          git config --global user.name "YEU"
-
+      - name: Specify credentials for write access to BitBucket
+        run: |
+           git config --global user.email "lode.rosseels@hotmail.com"
+           git config --global user.name "YEU"
       # Setup origin - no auth needed
       - name: Setup ORIGIN, without auth token
-        run: git remote set-url origin --add https://bitbucket.org/0verl0de/MyBitBucketRepo.git
+#        run: git remote set-url origin --add https://bitbucket.org/0verl0de/BitBucketRepo.git
+        run: git remote set-url origin --add https://bitbucket.org/$BITBUCKET_REPO
                 
       - name: Debug print repo connections
         run: git remote -v
@@ -63,13 +66,14 @@ jobs:
          git config pull.rebase false  
          git filter-branch -- --all
       - name: Pull branch to repo, use BitBucket token
-        run: git pull https://x-token-auth:$REPO_TOKEN@bitbucket.org/0verl0de/MyBitBucketRepo
-  
+#        run: git pull https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
+        run: git pull https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO  --allow-unrelated-histories
+
+
       - name: get conflicts and merge
-        run: git reset --hard origin/master
+        run: git reset --hard main
         
       - name: git push
-        run: git push -f https://x-token-auth:$REPO_TOKEN@bitbucket.org/0verl0de/MyBitBucketRepo
+#        run: git push -f https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
+        run: git push https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO
 
-
-          
