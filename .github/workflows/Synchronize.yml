@@ -48,10 +48,10 @@ jobs:
 #      - name: Initiate repo in Workspace
 #        run: git init
         
-#      - name: Specify credentials for write access to BitBucket
-#        run: |
-#          git config --global user.email "lode.rosseels@hotmail.com"
-#          git config --global user.name "YEU"
+      - name: Specify credentials for write access to BitBucket
+        run: |
+           git config --global user.email "lode.rosseels@hotmail.com"
+           git config --global user.name "YEU"
 
       # Setup origin - no auth needed
       - name: Setup ORIGIN, without auth token
