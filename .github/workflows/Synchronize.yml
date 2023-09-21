@@ -72,7 +72,7 @@ jobs:
 
 
       - name: get conflicts and merge
-        run: git reset --hard master
+        run: git reset --hard main
         
       - name: git push
 #        run: git push -f https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
