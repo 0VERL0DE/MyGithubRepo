@@ -51,12 +51,12 @@ jobs:
         run: |
            git config --global user.email "lode.rosseels@hotmail.com"
            git config --global user.name "YEU"
-           git config user.email tsywx5fbbgeh2e331vtwkvou70cge3@bots.bitbucket.org
+    
            
       # Setup origin - no auth needed
       - name: Setup ORIGIN, without auth token
 #        run: git remote set-url origin --add https://bitbucket.org/0verl0de/BitBucketRepo.git
-        run: git remote set-url origin --add https://bitbucket.org/$BITBUCKET_REPO
+        run: git remote set-url origin --add https://bitbucket.org/0verl0de/mybitbucketrepo.git
 
 
 
@@ -71,11 +71,10 @@ jobs:
 
       - name: Pull branch to repo, use BitBucket token
 #        run: git pull https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git pull https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO
-
+        run: git pull https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/0verl0de/mybitbucketrepo.git
       - name: get conflicts and merge
         run: git reset --hard main/origin
         
       - name: git push
 #        run: git push -f https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git push -f https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO
+        run: git push -f https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/0verl0de/mybitbucketrepo.git
