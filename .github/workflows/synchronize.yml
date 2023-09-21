@@ -67,9 +67,9 @@ jobs:
          git filter-branch -- --all
 
 
-      - name: Pull branch to repo, use BitBucket token
+#      - name: Pull branch to repo, use BitBucket token
 #        run: git pull https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git pull https://x-token-auth:ATCTT3xFfGN0hAMxaEbeGvzP14t5S5BBN3yYp7TW4t5X1Lx7F2K47CGaVNFj5A1v5lBh12DEk4BTmgpbqM4ABJbtSqlWm8mLs8AuHkU-yrozc1-jnEAuAAXq0AMj4EiZjhAMLTMvCmrTS4lAYKMCZvsk5Ept9f3NfLKELVy5OcOWW6UpCvig-JQ=3BF19963@bitbucket.org/0verl0de/MyBitBucketRepo.git
+#        run: git pull https://x-token-auth:ATCTT3xFfGN0hAMxaEbeGvzP14t5S5BBN3yYp7TW4t5X1Lx7F2K47CGaVNFj5A1v5lBh12DEk4BTmgpbqM4ABJbtSqlWm8mLs8AuHkU-yrozc1-jnEAuAAXq0AMj4EiZjhAMLTMvCmrTS4lAYKMCZvsk5Ept9f3NfLKELVy5OcOWW6UpCvig-JQ=3BF19963@bitbucket.org/0verl0de/MyBitBucketRepo.git
 
       - name: get conflicts and merge
         run: git reset --hard origin/main
