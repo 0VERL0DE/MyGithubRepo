@@ -12,7 +12,7 @@ env:
   # https://bitbucket.org/  %ACCOUYNT NAME%  /  %REPO NAME%  .git
   BITBUCKET_REPO : 0verl0de/MyBitBucketRepo.git
   # Secure token
-  BITBUCKET_TOKEN : ATCTT3xFfGN0hAMxaEbeGvzP14t5S5BBN3yYp7TW4t5X1Lx7F2K47CGaVNFj5A1v5lBh12DEk4BTmgpbqM4ABJbtSqlWm8mLs8AuHkU-yrozc1-jnEAuAAXq0AMj4EiZjhAMLTMvCmrTS4lAYKMCZvsk5Ept9f3NfLKELVy5OcOWW6UpCvig-JQ=3BF19963
+  BITBUCKET_TOKEN : ATCTT3xFfGN0cFaA1yxyBKu8Bxk1OLBdgI46p8W4U9TtRRUsun4MyqyqIB692j3x1KJzluUZm0L26eCz4W6XbCgheFecYl7E8LxlL1BMplRcXSTJEw4W0kJXP-MqqF8JJtjtaYZAXb4u2SgMOhATuwq1ffhNWufdjWaqOhYE9qtyYYYas8O02JA=33EB30DA
   
 
 # Sets permissions of the GITHUB_TOKEN
@@ -56,7 +56,7 @@ jobs:
       # Setup origin - no auth needed
       - name: Setup ORIGIN, without auth token
 #        run: git remote set-url origin --add https://bitbucket.org/0verl0de/BitBucketRepo.git
-        run: git remote set-url origin --add https://bitbucket.org/0verl0de/MyBitBucketRepo.git
+        run: git remote set-url origin --add https://bitbucket.org/0verl0de/HylerDemo.git
 
       - name: Debug print repo connections
         run: git remote -v
@@ -65,7 +65,6 @@ jobs:
         run: |     
          git config pull.rebase false  
          git filter-branch -- --all
-
 
 #      - name: Pull branch to repo, use BitBucket token
 #        run: git pull https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
@@ -76,4 +75,4 @@ jobs:
         
       - name: git push
 #        run: git push -f https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git push -f https://x-token-auth:ATCTT3xFfGN0hAMxaEbeGvzP14t5S5BBN3yYp7TW4t5X1Lx7F2K47CGaVNFj5A1v5lBh12DEk4BTmgpbqM4ABJbtSqlWm8mLs8AuHkU-yrozc1-jnEAuAAXq0AMj4EiZjhAMLTMvCmrTS4lAYKMCZvsk5Ept9f3NfLKELVy5OcOWW6UpCvig-JQ=3BF19963@bitbucket.org/0verl0de/MyBitBucketRepo.git
+        run: git push -f https://x-token-auth:ATCTT3xFfGN0cFaA1yxyBKu8Bxk1OLBdgI46p8W4U9TtRRUsun4MyqyqIB692j3x1KJzluUZm0L26eCz4W6XbCgheFecYl7E8LxlL1BMplRcXSTJEw4W0kJXP-MqqF8JJtjtaYZAXb4u2SgMOhATuwq1ffhNWufdjWaqOhYE9qtyYYYas8O02JA=33EB30DA@bitbucket.org/0verl0de/HylerDemo.git
