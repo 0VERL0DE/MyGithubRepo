@@ -68,15 +68,14 @@ jobs:
 
       - name: Pull branch to repo, use BitBucket token
 #        run: git pull https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git pull https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO  --allow-unrelated-histories
-
+        run: git pull https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO --allow-unrelated-histories
 
       - name: get conflicts and merge
         run: git reset --hard main/origin
         
       - name: git push
 #        run: git push -f https://x-token-auth:ATCTT3xFfGN0PwtYGS90--6OhrWpcAY5JLAumDB-GdpKfiFqZQHymtLBFXdmJtfWnaNes8GRelVubHNVGKYjhrcGUZmoTBh2ZfdnJ_gHrJ56gpwdVbtFbmHPMaJt8LZcYvp8BSWeD6IsvnWBTttWVjwfvNBdMTjzJeunYBI7cK4S-EPrKN8Wpqw=E1633E58@bitbucket.org/0verl0de/mybitbucketrepo.git
-        run: git push https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO
+        run: git push -f https://x-token-auth:$BITBUCKET_TOKEN@bitbucket.org/$BITBUCKET_REPO
 
 
           
